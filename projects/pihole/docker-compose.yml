@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    volumes:
+      - ./pihole/:/etc/pihole/
+      - ./pihole/dnsmasq.d/:/etc/dnsmasq.d/
+    ports:
+      - "8082:8082/tcp"
+      - "53:53/tcp"
+      - "53:53/udp"
+    environment:
+      - ServerIP=192.168.178.34
+      - PROXY_LOCATION=pihole
+      - TZ=Europe/Berlin
+      - WEB_PORT=8082
+      - WEBPASSWORD=Caba3606!
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
