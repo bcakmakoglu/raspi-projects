@@ -7,3 +7,4 @@ Currently includes:
  - [N8n](https://docs.n8n.io/)
  - [Nginx Proxy Manager](https://nginxproxymanager.com/guide/)
  - [PiHole](https://pi-hole.net/)
+ - [Portainer](https://documentation.portainer.io/)
