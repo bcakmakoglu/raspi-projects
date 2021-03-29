@@ -60,7 +60,7 @@ var config = {
       config: {
         location: "Hamburg",
         locationID: "",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-        appid: "openweathermaptoken"
+        appid: process.env.OPENWEATHERMAPTOKEN
       }
     },
     {
@@ -70,7 +70,7 @@ var config = {
       config: {
         location: "Hamburg",
         locationID: "5128581",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-        appid: "openweathermaptoken"
+        appid: process.env.OPENWEATHERMAPTOKEN
       }
     },
     {

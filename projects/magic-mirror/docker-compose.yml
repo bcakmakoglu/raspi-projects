@@ -11,3 +11,5 @@ services:
       - ./magic_mirror/modules:/opt/magic_mirror/modules
     ports:
       - 8888:8080
+    env_file:
+      - ./../../.env
