@@ -1,4 +1,3 @@
 *.env
-**/iobroker/iobrokerdata/.npm
-**/iobroker/iobrokerdata/log
-**/iobroker/iobrokerdata/node_modules
+**/iobroker/iobrokerdata/*
+.idea
