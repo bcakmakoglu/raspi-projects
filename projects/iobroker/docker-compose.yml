@@ -7,8 +7,10 @@ services:
     container_name: iobroker
     hostname: iobroker
     ports:
-      - 8089:8089
-      - 8081:8081
-      - 1883:1883
+      - 8089:8089 # web server
+      - 8081:8081 # ioBroker GUI
+      - 1883:1883 # mqtt broker/client
+      - 1884:1884 # node-red
+      - 1885:1885 # socket-io
     volumes:
       - ./iobrokerdata:/opt/iobroker
