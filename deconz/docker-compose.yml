@@ -6,8 +6,8 @@ services:
     container_name: deconz
     restart: always
     ports:
-      - 5080:80
-      - 5443:443
+      - 5080:80 # GUI port
+      - 5443:443 # WS port
     volumes:
       - ./opt/deconz:/root/.local/share/dresden-elektronik/deCONZ
     # The device listed here represents a Conbee II

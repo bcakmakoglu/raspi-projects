@@ -6,9 +6,9 @@ services:
     restart: unless-stopped
     container_name: nginx-proxy-manager
     ports:
-      - '80:80' #HTTP Traffic
-      - '81:81' #Dashboard Port
-      - '443:443' #HTTPS Traffic
+      - 80:80 # HTTP Traffic
+      - 81:81 # Dashboard Port
+      - 443:443 # HTTPS Traffic
     volumes:
       - ./config.json:/app/config/production.json
       - ./data:/data
