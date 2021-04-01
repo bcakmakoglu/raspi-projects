@@ -4,7 +4,7 @@
  * By Michael Teeuw https://michaelteeuw.nl
  * MIT Licensed.
  */
-const NodeHelper = require("node_helper");
+const NodeHelper = require("magic-mirror/magic_mirror/modules/default/calendar/node_helper");
 const validUrl = require("valid-url");
 const CalendarFetcher = require("./calendarfetcher.js");
 const Log = require("../../../js/logger");

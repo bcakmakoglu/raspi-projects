@@ -5,7 +5,7 @@
  * MIT Licensed.
  */
 
-const NodeHelper = require("node_helper");
+const NodeHelper = require("magic-mirror/magic_mirror/modules/default/newsfeed/node_helper");
 const validUrl = require("valid-url");
 const NewsfeedFetcher = require("./newsfeedfetcher.js");
 const Log = require("../../../js/logger");

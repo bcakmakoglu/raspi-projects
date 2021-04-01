@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const defaultModules = require(__dirname + "/../defaultmodules.js");
 const Log = require(__dirname + "/../../../js/logger.js");
-const NodeHelper = require("node_helper");
+const NodeHelper = require("magic-mirror/magic_mirror/modules/default/updatenotification/node_helper");
 
 module.exports = NodeHelper.create({
 	config: {},
