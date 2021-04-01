@@ -10,8 +10,13 @@ services:
       - 5443:443
     volumes:
       - ./opt/deconz:/root/.local/share/dresden-elektronik/deCONZ
+    # The device listed here represents a Conbee II
+    # The /dev/ID changes with the USB port that's used on the raspi
+    # Easy way to find out which device id needs to be used:
+    # Enter lsbusb into shell to see all usb devices (check if your device is connected)
+    # Enter ls -l /dev/serial/by-id to see the correct device id
     devices:
-      - /dev/ttyACM1
+      - /dev/ttyACM0:/dev/ttyACM0
     environment:
       - DECONZ_WEB_PORT=80
       - DECONZ_WS_PORT=443

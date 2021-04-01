@@ -12,5 +12,3 @@ services:
       - 1883:1883
     volumes:
       - ./iobrokerdata:/opt/iobroker
-    devices:
-      - /dev/ttyACM0:/dev/ttyACM0
