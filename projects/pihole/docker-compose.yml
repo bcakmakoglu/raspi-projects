@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3"
 
 services:
   pihole:
@@ -8,9 +8,9 @@ services:
       - ./pihole/:/etc/pihole/
       - ./pihole/dnsmasq.d/:/etc/dnsmasq.d/
     ports:
-      - "8082:8082/tcp"
-      - "53:53/tcp"
-      - "53:53/udp"
+      - 8082:8082/tcp
+      - 53:53/tcp
+      - 53:53/udp
     environment:
       - ServerIP=192.168.178.34
       - PROXY_LOCATION=pihole
