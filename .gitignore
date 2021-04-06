@@ -1,3 +1,5 @@
 *.env
-iobroker/iobrokerdata/*
+/iobroker/iobrokerdata/
 .idea
+/**/*/node_modules
+/backup/

@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  strapi:
+    container_name: strapi
+    build:
+      dockerfile: api/Dockerfile
+      context: docker
+    volumes:
+    - ./app/:/usr/src/api/strapi-app
+    ports:
+      - 1337:1337
+    environment:
+      - APP_NAME=strapi-app
+      - DATABASE_CLIENT=mongo
+      - DATABASE_HOST=strapi_db
+      - DATABASE_PORT=27017
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=
+      - DATABASE_PASSWORD=
+      - HOST=0.0.0.0
+    depends_on:
+      - db
+    restart: always
+  db:
+    container_name: strapi_db
+    # only works for 64-bit Raspbian OS
+    image: mongo:latest
+    volumes:
+      - ./db/:/data/db
+    ports:
+      - 27017:27017
+      - 28017:28017
+    environment:
+      - MONGO_INITDB_DATABASE=strapi
+    restart: always
