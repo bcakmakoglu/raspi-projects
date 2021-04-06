@@ -9,7 +9,7 @@ Mostly docker-compose files for my raspberrypi
  - [Pi-Hole](https://pi-hole.net/)
  - [Portainer](https://documentation.portainer.io/)
  - [Deconz](https://github.com/marthoc/docker-deconz)
-
+ - [Strapi](https://strapi.io/)
 ## Port-Bindings
 ### IoBroker
     ports:
@@ -48,6 +48,9 @@ Mostly docker-compose files for my raspberrypi
     ports:
       - 8999:9000
 
+### Strapi
+       ports:
+      - 1337:1337
 
 ## Nginx Proxy Manager
 To use the NPM (Nginx Proxy Manager) reverse proxy do this:
