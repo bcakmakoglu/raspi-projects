@@ -10,27 +10,18 @@ services:
     - ./app/:/usr/src/api/strapi-app
     ports:
       - 1337:1337
-    environment:
-      - APP_NAME=strapi-app
-      - DATABASE_CLIENT=mongo
-      - DATABASE_HOST=strapi_db
-      - DATABASE_PORT=27017
-      - DATABASE_NAME=strapi
-      - DATABASE_USERNAME=
-      - DATABASE_PASSWORD=
-      - HOST=0.0.0.0
+    env_file:
+      - .env
     depends_on:
       - db
     restart: always
   db:
-    container_name: strapi_db
-    # only works for 64-bit Raspbian OS
-    image: mongo:latest
-    volumes:
-      - ./db/:/data/db
-    ports:
-      - 27017:27017
-      - 28017:28017
-    environment:
-      - MONGO_INITDB_DATABASE=strapi
+    container_name: postgres
+    image: postgres
     restart: always
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi

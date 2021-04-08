@@ -11,11 +11,8 @@ LABEL maintainer="Burak Cakmakoglu <brainbraks@googlemail.com>" \
 
 WORKDIR /usr/src/api
 
-RUN wget https://github.com/libvips/libvips/releases/download/v8.10.6/vips-8.10.6.tar.gz
-RUN tar xf vips-8.10.6.tar.gz
-RUN cd vips-8.10.6 && ./configure && make && make install && ldconfig
-RUN cd ..
-RUN chown -R `stat -c "%u:%g" ./` ./
+RUN wget https://github.com/libvips/libvips/releases/download/v8.10.6/vips-8.10.6.tar.gz && tar xf vips-8.10.6.tar.gz
+RUN cd vips-8.10.6 && ./configure && make && make install && ldconfig && cd ..
 
 COPY ./api/entrypoint.sh ./
 RUN chmod +x ./entrypoint.sh
