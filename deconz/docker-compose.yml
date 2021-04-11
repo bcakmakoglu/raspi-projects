@@ -16,7 +16,7 @@ services:
     # Enter lsbusb into shell to see all usb devices (check if your device is connected)
     # Enter ls -l /dev/serial/by-id to see the correct device id
     devices:
-      - /dev/ttyACM0:/dev/ttyACM0
+      - /dev/ttyACM0
     environment:
       - DECONZ_WEB_PORT=80
       - DECONZ_WS_PORT=443

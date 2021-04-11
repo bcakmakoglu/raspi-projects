@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  frontend:
+    container_name: bot-ui
+    image: bcakmakoglu/bot-ui:latest
+    ports:
+      - "8085:8085"
+      - "3000:3000"
+    volumes:
+      - .:/app/bot-ui
+    env_file:
+      - .env
+    restart: unless-stopped
+  admin:
+    container_name: db_admin
+    image: adminer
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+  db:
+    image: "mariadb:10.4.8"
+    container_name: mariadb-bot
+    ports:
+      - "3306:3306"
+    env_file:
+      - .env
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    restart: unless-stopped
+  ngrok:
+    ports:
+      - "4040:4040"
+    container_name: www_ngrok
+    image: wernight/ngrok
+    env_file:
+      - .env
+    restart: unless-stopped

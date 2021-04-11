@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  dynamodb:
+    image: bcakmakoglu/rpi-dynamodb
+    container_name: dynamodb
+    restart: always
+    ports:
+      - 8000:8000
