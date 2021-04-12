@@ -19,7 +19,7 @@ services:
       - "8080:8080"
     restart: unless-stopped
   db:
-    image: "mariadb:10.4.8"
+    image: jsurf/rpi-mariadb
     container_name: mariadb-bot
     ports:
       - "3306:3306"
